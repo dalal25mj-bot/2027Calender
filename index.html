@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2027 UN Observances &amp; GCC Calendar | Dalal Alotaibi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-paper: #ffffff;
+      --bg-subtle: #f8fafc;
+      --grid-line: #e2e8f0;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --tiffany: #0abab5;
+      --tiffany-dark: #078f8b;
+      --tiffany-light: #e0f7f6;
+      --sky: #38bdf8;
+      --sky-light: #e0f2fe;
+      --orange: #ff6b00;
+      --orange-light: #fff0e5;
+      --emerald: #10b981;
+      --emerald-light: #d1fae5;
+      --indigo: #6366f1;
+      --indigo-light: #e0e7ff;
+      --rose: #f43f5e;
+      --rose-light: #ffe4e6;
+      --border: #cbd5e1;
+      --shadow-sm: 0 2px 6px rgba(15, 23, 42, 0.04);
+      --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.07);
+      --radius-lg: 16px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-paper);
+      background-image:
+        linear-gradient(to right, rgba(226, 232, 240, 0.45) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(226, 232, 240, 0.45) 1px, transparent 1px);
+      background-size: 28px 28px;
+      color: var(--text-main);
+      line-height: 1.55;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top Header */
+    header {
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid var(--tiffany);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      padding: 16px 24px;
+    }
+
+    .header-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-badge {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--tiffany), var(--sky));
+      color: #fff;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 1.15rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(10, 186, 181, 0.25);
+      flex-shrink: 0;
+    }
+
+    .brand h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+
+    .brand p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .header-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .reminder-select-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg-subtle);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 6px 12px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-main);
+    }
+
+    .reminder-select-wrap select {
+      border: none;
+      background: transparent;
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--tiffany-dark);
+      cursor: pointer;
+      outline: none;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 15px;
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1.5px solid transparent;
+      transition: all 0.18s ease;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--tiffany);
+      color: #ffffff;
+      box-shadow: 0 3px 10px rgba(10, 186, 181, 0.22);
+    }
+
+    .btn-primary:hover {
+      background: var(--tiffany-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-orange {
+      background: var(--orange);
+      color: #ffffff;
+      box-shadow: 0 3px 10px rgba(255, 107, 0, 0.22);
+    }
+
+    .btn-orange:hover {
+      background: #e05e00;
+      transform: translateY(-1px);
+    }
+
+    /* Main Container */
+    main {
+      max-width: 1280px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 24px 24px 48px;
+      flex: 1;
+    }
+
+    /* Toolbar & Search */
+    .toolbar {
+      background: #ffffff;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 18px 20px;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .toolbar-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .view-toggle {
+      display: inline-flex;
+      background: var(--bg-subtle);
+      padding: 4px;
+      border-radius: 10px;
+      border: 1.5px solid var(--border);
+    }
+
+    .view-btn {
+      padding: 8px 16px;
+      border: none;
+      background: transparent;
+      border-radius: 7px;
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.16s ease;
+    }
+
+    .view-btn.active {
+      background: #ffffff;
+      color: var(--tiffany-dark);
+      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
+    }
+
+    .search-box {
+      position: relative;
+      flex: 1;
+      min-width: 240px;
+      max-width: 420px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 9px 14px 9px 38px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.9rem;
+      color: var(--text-main);
+      background: #ffffff;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    .search-box input:focus {
+      border-color: var(--tiffany);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      pointer-events: none;
+    }
+
+    /* Category Filter Pills */
+    .category-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .cat-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1.5px solid var(--border);
+      background: #ffffff;
+      font-family: inherit;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.16s ease;
+    }
+
+    .cat-pill:hover {
+      border-color: var(--tiffany);
+      color: var(--text-main);
+    }
+
+    .cat-pill.active {
+      background: var(--text-main);
+      color: #ffffff;
+      border-color: var(--text-main);
+    }
+
+    .cat-pill .count {
+      background: rgba(148, 163, 184, 0.22);
+      padding: 1px 7px;
+      border-radius: 999px;
+      font-size: 0.76rem;
+    }
+
+    .cat-pill.active .count {
+      background: rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+    }
+
+    /* Section Banner */
+    .section-banner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+      padding: 14px 18px;
+      background: #ffffff;
+      border-left: 5px solid var(--tiffany);
+      border-top: 1.5px solid var(--border);
+      border-right: 1.5px solid var(--border);
+      border-bottom: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .section-banner h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .section-banner p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Cards Grid */
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+      gap: 16px;
+    }
+
+    .event-card {
+      background: #ffffff;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+    }
+
+    .event-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--tiffany);
+    }
+
+    .event-card.personal-highlight {
+      border: 2px solid var(--orange);
+      background: linear-gradient(135deg, #ffffff 0%, #fff7ed 100%);
+    }
+
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .date-badge {
+      background: var(--tiffany-light);
+      color: var(--tiffany-dark);
+      border: 1px solid rgba(10, 186, 181, 0.3);
+      border-radius: 10px;
+      padding: 6px 11px;
+      text-align: center;
+      min-width: 66px;
+      flex-shrink: 0;
+    }
+
+    .date-badge.personal {
+      background: linear-gradient(135deg, var(--orange), var(--tiffany));
+      color: #ffffff;
+      border: none;
+    }
+
+    .date-badge .month {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .date-badge .day {
+      display: block;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      line-height: 1.15;
+    }
+
+    .cat-tag {
+      display: inline-block;
+      font-size: 0.73rem;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .tag-education { background: var(--sky-light); color: #0369a1; }
+    .tag-gcc { background: var(--orange-light); color: #c2410c; }
+    .tag-environment { background: var(--emerald-light); color: #047857; }
+    .tag-human { background: var(--indigo-light); color: #4338ca; }
+    .tag-personal { background: var(--rose-light); color: #be123c; }
+
+    .event-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-top: 8px;
+      line-height: 1.35;
+    }
+
+    .event-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 12px;
+      border-top: 1px dashed var(--border);
+      gap: 8px;
+    }
+
+    .weekday-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .btn-ics-sm {
+      padding: 6px 11px;
+      font-size: 0.79rem;
+      border-radius: 7px;
+      background: var(--bg-subtle);
+      border: 1.5px solid var(--border);
+      color: var(--text-main);
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.15s;
+    }
+
+    .btn-ics-sm:hover {
+      background: var(--tiffany);
+      border-color: var(--tiffany);
+      color: #ffffff;
+    }
+
+    /* Full 12-Month Calendar Grid */
+    .year-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .month-card {
+      background: #ffffff;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .month-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--tiffany-light);
+    }
+
+    .month-header h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .month-count {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--tiffany-dark);
+      background: var(--tiffany-light);
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+
+    .weekdays-row {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      text-align: center;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .days-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 4px;
+    }
+
+    .day-cell {
+      aspect-ratio: 1 / 1;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text-main);
+      position: relative;
+      border: 1px solid transparent;
+      background: transparent;
+      transition: all 0.14s ease;
+    }
+
+    .day-cell.empty {
+      pointer-events: none;
+    }
+
+    .day-cell.has-event {
+      cursor: pointer;
+      font-weight: 700;
+      background: var(--bg-subtle);
+      border-color: var(--border);
+    }
+
+    .day-cell.has-event:hover {
+      border-color: var(--tiffany);
+      background: var(--tiffany-light);
+      transform: scale(1.06);
+      z-index: 2;
+    }
+
+    .day-cell.birthday-cell {
+      background: linear-gradient(135deg, var(--orange), var(--tiffany)) !important;
+      color: #ffffff !important;
+      border: none !important;
+      font-weight: 800;
+      box-shadow: 0 3px 10px rgba(255, 107, 0, 0.35);
+    }
+
+    .dots-row {
+      display: flex;
+      gap: 2px;
+      margin-top: 2px;
+    }
+
+    .dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+    }
+
+    .dot-education { background: #0284c7; }
+    .dot-gcc { background: #ff6b00; }
+    .dot-environment { background: #10b981; }
+    .dot-human { background: #6366f1; }
+    .dot-personal { background: #ffffff; }
+
+    /* Legend */
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+      background: #ffffff;
+      padding: 10px 16px;
+      border-radius: var(--radius-md);
+      border: 1.5px solid var(--border);
+    }
+
+    .legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+    }
+
+    /* Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.48);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 100;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-card {
+      background: #ffffff;
+      border: 2px solid var(--tiffany);
+      border-radius: var(--radius-lg);
+      max-width: 540px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 24px;
+      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.2);
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1.5px solid var(--border);
+    }
+
+    .modal-header h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 800;
+    }
+
+    .close-btn {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      color: var(--text-main);
+    }
+
+    .modal-event-item {
+      padding: 14px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      margin-bottom: 12px;
+      background: var(--bg-subtle);
+    }
+
+    .modal-event-item.personal {
+      background: #fff7ed;
+      border-color: var(--orange);
+    }
+
+    /* Footer with Neat Signature */
+    footer {
+      background: #ffffff;
+      border-top: 1.5px solid var(--border);
+      padding: 18px 24px;
+      margin-top: auto;
+    }
+
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .signature {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.84rem;
+      color: var(--tiffany-dark);
+      letter-spacing: 0.02em;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 640px) {
+      header { padding: 14px 16px; }
+      main { padding: 16px 16px 36px; }
+      .brand h1 { font-size: 1.15rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="brand">
+        <div class="brand-badge">2027</div>
+        <div>
+          <h1>UN Observances &amp; GCC Calendar</h1>
+          <p>Categorized 2027 Directory, Full 365-Day Calendar &amp; One-Tap Phone Reminders</p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <div class="reminder-select-wrap" title="Choose alert timing for .ics phone calendar downloads">
+          <span>🔔 Alert:</span>
+          <select id="alarmSelect">
+            <option value="0">Same Day (9:00 AM)</option>
+            <option value="1440" selected>1 Day Before (9:00 AM)</option>
+            <option value="10080">1 Week Before</option>
+          </select>
+        </div>
+
+        <button class="btn btn-orange" onclick="downloadCategoryICS()">
+          📥 Export Current Category (.ics)
+        </button>
+        <button class="btn btn-primary" onclick="downloadAllICS()">
+          📅 Download Full 2027 (.ics)
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Toolbar -->
+    <div class="toolbar">
+      <div class="toolbar-top">
+        <div class="view-toggle">
+          <button id="btnViewDir" class="view-btn active" onclick="switchView('directory')">📋 Categorized Directory</button>
+          <button id="btnViewCal" class="view-btn" onclick="switchView('calendar')">🗓️ Full 2027 Calendar (12 Months)</button>
+        </div>
+
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="searchInput" placeholder="Search observances, UAE, education, science, month..." oninput="renderApp()" />
+        </div>
+      </div>
+
+      <div class="category-tabs" id="categoryTabs"></div>
+    </div>
+
+    <!-- Section Banner -->
+    <div class="section-banner">
+      <div>
+        <h2 id="bannerTitle">All 2027 Observances</h2>
+        <p id="bannerSubtitle">Tap any "+ Phone Reminder (.ics)" button to add directly to Apple Calendar, Google Calendar, or Outlook.</p>
+      </div>
+      <div id="visibleCountBadge" style="font-weight:700; color:var(--tiffany-dark); font-size:0.9rem;"></div>
+    </div>
+
+    <!-- Directory View -->
+    <section id="directorySection">
+      <div class="events-grid" id="eventsGrid"></div>
+    </section>
+
+    <!-- Full 2027 Calendar View -->
+    <section id="calendarSection" class="hidden">
+      <div class="legend">
+        <span class="legend-item"><span class="dot dot-education" style="width:9px;height:9px;"></span> Education, Science &amp; Literacy</span>
+        <span class="legend-item"><span class="dot dot-gcc" style="width:9px;height:9px;"></span> GCC Countries &amp; Regional</span>
+        <span class="legend-item"><span class="dot dot-environment" style="width:9px;height:9px;"></span> Environment &amp; Sustainability</span>
+        <span class="legend-item"><span class="dot dot-human" style="width:9px;height:9px;"></span> Human Rights, Peace &amp; Health</span>
+        <span class="legend-item"><span style="display:inline-block;width:12px;height:12px;border-radius:4px;background:linear-gradient(135deg,#ff6b00,#0abab5);"></span> ★ Oct 5: Dalal's Birthday &amp; World Teachers' Day</span>
+      </div>
+      <div class="year-grid" id="yearGrid"></div>
+    </section>
+  </main>
+
+  <!-- Date Detail Modal -->
+  <div class="modal-backdrop" id="dateModal" onclick="closeModalOnBackdrop(event)">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="modalDateTitle">Date Details</h3>
+        <button class="close-btn" onclick="closeModal()">✕</button>
+      </div>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <span class="signature">Dalal Alotaibi</span>
+      <span>2027 International UN Observances, Education &amp; GCC Calendar • Compatible with iOS, Android, Google &amp; Outlook Calendars</span>
+    </div>
+  </footer>
+
+  <script>
+    const OBSERVANCES_2027 = [
+      // PERSONAL MILESTONES
+      { date: "2027-10-05", title: "Dalal's Birthday 🎂 (Dalal Alotaibi's Birthday)", category: "personal", desc: "Special personal celebration on October 5, 2027 — coinciding with World Teachers' Day." },
+
+      // EDUCATION, SCIENCE & LITERACY
+      { date: "2027-01-04", title: "World Braille Day", category: "education", desc: "UN observance raising awareness of the importance of Braille as a means of communication for blind and partially sighted people." },
+      { date: "2027-01-24", title: "International Day of Education", category: "education", desc: "UN General Assembly observance celebrating the role of education for peace and sustainable development." },
+      { date: "2027-02-11", title: "International Day of Women and Girls in Science", category: "education", desc: "Promotes full and equal access to and participation in science, technology, engineering, and mathematics (STEM) for women and girls." },
+      { date: "2027-02-21", title: "International Mother Language Day", category: "education", desc: "UNESCO observance promoting linguistic and cultural diversity and multilingual education." },
+      { date: "2027-03-14", title: "International Day of Mathematics (Pi Day)", category: "education", desc: "UNESCO-proclaimed celebration highlighting the essential role of mathematics in science, technology, and daily life." },
+      { date: "2027-03-21", title: "World Poetry Day", category: "education", desc: "UNESCO observance supporting linguistic diversity through poetic expression and endangered languages." },
+      { date: "2027-04-22", title: "International Girls in ICT Day", category: "education", desc: "ITU initiative encouraging young women and girls to pursue studies and careers in information and communication technologies." },
+      { date: "2027-04-23", title: "World Book and Copyright Day", category: "education", desc: "UNESCO celebration promoting reading, publishing, and the protection of intellectual property." },
+      { date: "2027-04-26", title: "World Intellectual Property Day", category: "education", desc: "WIPO observance highlighting how intellectual property rights encourage innovation and creativity." },
+      { date: "2027-05-16", title: "International Day of Light", category: "education", desc: "UNESCO observance celebrating the role light plays in science, culture, art, education, and sustainable development." },
+      { date: "2027-05-17", title: "World Telecommunication and Information Society Day", category: "education", desc: "Raises awareness of how the internet and digital technologies bridge the digital divide." },
+      { date: "2027-05-20", title: "World Metrology Day", category: "education", desc: "Celebrates the science of measurement and its application in scientific discovery and innovation." },
+      { date: "2027-07-15", title: "World Youth Skills Day", category: "education", desc: "UN observance celebrating the strategic importance of equipping young people with skills for employment and entrepreneurship." },
+      { date: "2027-09-08", title: "International Literacy Day", category: "education", desc: "UNESCO observance reminding the global community of the importance of literacy as a matter of dignity and human rights." },
+      { date: "2027-09-09", title: "International Day to Protect Education from Attack", category: "education", desc: "UN observance calling for the safeguarding of schools, students, and educators in conflict-affected areas." },
+      { date: "2027-10-04", title: "World Space Week (Starts Oct 4–10)", category: "education", desc: "UN-declared celebration of space science and technology and their contribution to the betterment of the human condition." },
+      { date: "2027-10-05", title: "World Teachers' Day", category: "education", desc: "UNESCO observance honoring educators worldwide and recognizing their vital role in shaping future generations." },
+      { date: "2027-10-24", title: "Global Media and Information Literacy Week (Starts)", category: "education", desc: "UNESCO initiative empowering citizens with critical thinking and digital literacy skills." },
+      { date: "2027-11-10", title: "World Science Day for Peace and Development", category: "education", desc: "Highlights the significant role of science in society and the need to engage the wider public in emerging scientific issues." },
+      { date: "2027-11-18", title: "World Philosophy Day", category: "education", desc: "UNESCO observance underlining the enduring value of philosophy for the development of human thought and critical inquiry." },
+      { date: "2027-12-18", title: "World Arabic Language Day", category: "education", desc: "UN and UNESCO celebration of the Arabic language's rich contribution to global science, literature, and civilization." },
+
+      // GCC COUNTRIES & REGIONAL OBSERVANCES
+      { date: "2027-02-22", title: "Saudi Founding Day (Kingdom of Saudi Arabia)", category: "gcc", desc: "Commemorates the founding of the First Saudi State in 1727 by Imam Muhammad bin Saud." },
+      { date: "2027-02-25", title: "Kuwait National Day (State of Kuwait)", category: "gcc", desc: "Celebrates Kuwait's national independence and sovereignty." },
+      { date: "2027-02-26", title: "Kuwait Liberation Day (State of Kuwait)", category: "gcc", desc: "Marks the liberation of Kuwait in 1991." },
+      { date: "2027-03-09", title: "Eid al-Fitr (Expected GCC Regional Holiday)", category: "gcc", desc: "Major Islamic celebration marking the end of Ramadan across all GCC member states (subject to moon sighting)." },
+      { date: "2027-03-11", title: "Saudi Flag Day (Kingdom of Saudi Arabia)", category: "gcc", desc: "National observance celebrating the history and symbolism of the Saudi national flag." },
+      { date: "2027-03-15", title: "Emirati Children's Day (United Arab Emirates)", category: "gcc", desc: "UAE national observance dedicated to safeguarding children's rights, education, and well-being." },
+      { date: "2027-05-15", title: "Arafat Day (Expected GCC Regional Observance)", category: "gcc", desc: "Sacred day during the annual Hajj pilgrimage in Makkah, observed across the Gulf region (subject to moon sighting)." },
+      { date: "2027-05-16", title: "Eid al-Adha (Expected GCC Regional Holiday)", category: "gcc", desc: "Festival of Sacrifice celebrated across the UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, and Oman (subject to moon sighting)." },
+      { date: "2027-05-25", title: "GCC Foundation Day (Gulf Cooperation Council)", category: "gcc", desc: "Marks the establishment of the Cooperation Council for the Arab States of the Gulf in Abu Dhabi on May 25, 1981." },
+      { date: "2027-06-06", title: "Islamic New Year 1449 AH (Expected GCC Observance)", category: "gcc", desc: "First day of Muharram marking the new Hijri year 1449 across GCC countries (subject to moon sighting)." },
+      { date: "2027-08-15", title: "Prophet's Birthday / Mawlid al-Nabi (Expected GCC)", category: "gcc", desc: "Regional observance marking 12 Rabi' al-Awwal 1449 AH (subject to moon sighting)." },
+      { date: "2027-08-28", title: "Emirati Women's Day (United Arab Emirates)", category: "gcc", desc: "Celebrates the achievements and contributions of Emirati women across science, education, leadership, and society." },
+      { date: "2027-09-23", title: "Saudi National Day (Kingdom of Saudi Arabia)", category: "gcc", desc: "Commemorates the unification of the Kingdom of Saudi Arabia by King Abdulaziz in 1932." },
+      { date: "2027-10-17", title: "Omani Women's Day (Sultanate of Oman)", category: "gcc", desc: "Dedicated to recognizing the role and contributions of Omani women in national development." },
+      { date: "2027-11-03", title: "UAE Flag Day (United Arab Emirates)", category: "gcc", desc: "National occasion where citizens, residents, and schools across the UAE hoist the flag in unity and pride." },
+      { date: "2027-11-18", title: "Oman National Day (Sultanate of Oman)", category: "gcc", desc: "Celebrates the national sovereignty and modern renaissance of the Sultanate of Oman." },
+      { date: "2027-11-30", title: "UAE Commemoration Day (Martyrs' Day)", category: "gcc", desc: "Honors the sacrifices and dedication of UAE martyrs who gave their lives in service to the nation." },
+      { date: "2027-12-01", title: "Bahraini Women's Day (Kingdom of Bahrain)", category: "gcc", desc: "Celebrates Bahraini women's achievements in education, engineering, healthcare, and public life." },
+      { date: "2027-12-02", title: "UAE National Day / Eid Al Etihad (United Arab Emirates)", category: "gcc", desc: "Celebrates the historic union of the seven emirates on December 2, 1971." },
+      { date: "2027-12-16", title: "Bahrain National Day (Kingdom of Bahrain)", category: "gcc", desc: "Marks the establishment of the modern Bahraini state and national independence." },
+      { date: "2027-12-18", title: "Qatar National Day (State of Qatar)", category: "gcc", desc: "Commemorates Qatar's unification in 1878 under Sheikh Jassim bin Mohammed Al Thani." },
+
+      // ENVIRONMENT, ENERGY & SUSTAINABILITY
+      { date: "2027-01-26", title: "International Day of Clean Energy", category: "environment", desc: "UN observance raising awareness and mobilizing action for a just and inclusive transition to clean energy." },
+      { date: "2027-02-02", title: "World Wetlands Day", category: "environment", desc: "Raises global awareness about the vital role of wetlands for people and our planet." },
+      { date: "2027-03-03", title: "World Wildlife Day", category: "environment", desc: "Celebrates and raises awareness of the world's wild animals and plants." },
+      { date: "2027-03-21", title: "International Day of Forests", category: "environment", desc: "Celebrates and raises awareness of the importance of all types of forests." },
+      { date: "2027-03-22", title: "World Water Day", category: "environment", desc: "UN observance focusing on the importance of freshwater and sustainable management of water resources." },
+      { date: "2027-03-23", title: "World Meteorological Day", category: "environment", desc: "Commemorates the establishment of the World Meteorological Organization and climate science." },
+      { date: "2027-03-30", title: "International Day of Zero Waste", category: "environment", desc: "Promotes sustainable consumption and production patterns and circular economy practices." },
+      { date: "2027-04-22", title: "International Mother Earth Day", category: "environment", desc: "Promotes harmony with nature and global environmental stewardship." },
+      { date: "2027-05-20", title: "World Bee Day", category: "environment", desc: "Raises awareness of the essential role bees and other pollinators play in ecosystems and food security." },
+      { date: "2027-05-22", title: "International Day for Biological Diversity", category: "environment", desc: "Increases understanding and awareness of biodiversity conservation issues." },
+      { date: "2027-06-05", title: "World Environment Day", category: "environment", desc: "The United Nations' principal vehicle for encouraging worldwide awareness and action for the environment." },
+      { date: "2027-06-08", title: "World Oceans Day", category: "environment", desc: "Reminds everyone of the major role the oceans have in everyday life as the lungs of our planet." },
+      { date: "2027-06-17", title: "World Day to Combat Desertification and Drought", category: "environment", desc: "Promotes public awareness of international efforts to combat desertification and land degradation." },
+      { date: "2027-09-16", title: "International Day for the Preservation of the Ozone Layer", category: "environment", desc: "Commemorates the signing of the Montreal Protocol protecting the Earth's ozone layer." },
+      { date: "2027-10-04", title: "World Habitat Day", category: "environment", desc: "Reflects on the state of our towns and cities and the basic right of all to adequate shelter." },
+      { date: "2027-10-13", title: "International Day for Disaster Risk Reduction", category: "environment", desc: "Promotes a global culture of risk-awareness and disaster reduction." },
+      { date: "2027-10-16", title: "World Food Day", category: "environment", desc: "FAO observance promoting worldwide awareness and action for those who suffer from hunger and food security." },
+      { date: "2027-10-31", title: "World Cities Day", category: "environment", desc: "Promotes the international community's interest in global urbanization and sustainable urban development." },
+      { date: "2027-12-05", title: "World Soil Day", category: "environment", desc: "Focuses attention on the importance of healthy soil and sustainable management of soil resources." },
+      { date: "2027-12-11", title: "International Mountain Day", category: "environment", desc: "Creates awareness about the importance of mountains to life and sustainable mountain development." },
+
+      // HUMAN RIGHTS, PEACE, HEALTH & SOCIETY
+      { date: "2027-02-04", title: "International Day of Human Fraternity", category: "human", desc: "Promotes interreligious and intercultural dialogue, tolerance, and mutual respect." },
+      { date: "2027-02-20", title: "World Day of Social Justice", category: "human", desc: "Recognizes the need to promote social justice, including efforts to tackle poverty and exclusion." },
+      { date: "2027-03-08", title: "International Women's Day", category: "human", desc: "Global day celebrating the social, economic, cultural, and political achievements of women." },
+      { date: "2027-03-20", title: "International Day of Happiness", category: "human", desc: "Recognizes the relevance of happiness and well-being as universal goals and aspirations." },
+      { date: "2027-04-02", title: "World Autism Awareness Day", category: "human", desc: "Highlights the need to help improve the quality of life of those with autism so they can lead full and meaningful lives." },
+      { date: "2027-04-07", title: "World Health Day", category: "human", desc: "WHO global health awareness day marking the anniversary of the founding of the World Health Organization." },
+      { date: "2027-04-21", title: "World Creativity and Innovation Day", category: "human", desc: "Raises awareness of the role of creativity and innovation in all aspects of human development." },
+      { date: "2027-05-03", title: "World Press Freedom Day", category: "human", desc: "Celebrates the fundamental principles of press freedom and evaluates press freedom around the world." },
+      { date: "2027-05-15", title: "International Day of Families", category: "human", desc: "Promotes awareness of issues relating to families and increases knowledge of social and demographic processes." },
+      { date: "2027-05-21", title: "World Day for Cultural Diversity for Dialogue and Development", category: "human", desc: "Celebrates not only the richness of the world's cultures, but also the essential role of intercultural dialogue." },
+      { date: "2027-06-20", title: "World Refugee Day", category: "human", desc: "Honors refugees around the globe and celebrates their strength and courage." },
+      { date: "2027-07-18", title: "Nelson Mandela International Day", category: "human", desc: "Honors Nelson Mandela's legacy and promotes community service and social justice." },
+      { date: "2027-07-30", title: "International Day of Friendship", category: "human", desc: "Promotes the role that friendship plays in promoting peace in many cultures." },
+      { date: "2027-08-12", title: "International Youth Day", category: "human", desc: "Brings youth issues to the attention of the international community and celebrates the potential of youth." },
+      { date: "2027-08-19", title: "World Humanitarian Day", category: "human", desc: "Pays tribute to aid workers who risk their lives in humanitarian service and rallies support for people affected by crises." },
+      { date: "2027-09-05", title: "International Day of Charity", category: "human", desc: "Raises awareness and provides a common platform for charity-related activities all over the world." },
+      { date: "2027-09-21", title: "International Day of Peace", category: "human", desc: "Devoted to strengthening the ideals of peace, through observing 24 hours of non-violence and cease-fire." },
+      { date: "2027-10-01", title: "International Day of Older Persons", category: "human", desc: "Raises awareness about opportunities and challenges faced by ageing populations." },
+      { date: "2027-10-10", title: "World Mental Health Day", category: "human", desc: "Raises awareness of mental health issues around the world and mobilizes efforts in support of mental health." },
+      { date: "2027-10-11", title: "International Day of the Girl Child", category: "human", desc: "Focuses attention on the need to address the challenges girls face and to promote girls' empowerment." },
+      { date: "2027-10-17", title: "International Day for the Eradication of Poverty", category: "human", desc: "Promotes understanding and dialogue between people living in poverty and the wider society." },
+      { date: "2027-10-24", title: "United Nations Day", category: "human", desc: "Marks the anniversary of the entry into force in 1945 of the UN Charter." },
+      { date: "2027-11-16", title: "International Day for Tolerance", category: "human", desc: "Generates public awareness of the dangers of intolerance and promotes mutual respect." },
+      { date: "2027-11-20", title: "World Children's Day", category: "human", desc: "UNICEF's annual day of action for children, by children, marking the adoption of the Convention on the Rights of the Child." },
+      { date: "2027-12-03", title: "International Day of Persons with Disabilities", category: "human", desc: "Promotes the rights and well-being of persons with disabilities in all spheres of society." },
+      { date: "2027-12-05", title: "International Volunteer Day", category: "human", desc: "Celebrates the power and potential of volunteerism worldwide." },
+      { date: "2027-12-10", title: "Human Rights Day", category: "human", desc: "Commemorates the day in 1948 when the UN General Assembly adopted the Universal Declaration of Human Rights." },
+      { date: "2027-12-20", title: "International Human Solidarity Day", category: "human", desc: "Celebrates unity in diversity and reminds governments to respect their commitments to international agreements." }
+    ];
+
+    const CATEGORIES = [
+      { id: "all", label: "All 2027 Observances", icon: "🌐" },
+      { id: "education", label: "Education, Science & Literacy", icon: "🎓" },
+      { id: "gcc", label: "GCC Countries & Regional", icon: "🇦🇪" },
+      { id: "environment", label: "Environment & Sustainability", icon: "🌱" },
+      { id: "human", label: "Human Rights, Peace & Health", icon: "🕊️" },
+      { id: "personal", label: "Personal Milestones", icon: "🎂" }
+    ];
+
+    const MONTH_NAMES = [
+      "January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"
+    ];
+
+    const MONTH_SHORT = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+    const WEEKDAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+    let activeCategory = "all";
+    let activeView = "directory";
+
+    OBSERVANCES_2027.sort((a, b) => a.date.localeCompare(b.date));
+
+    function getCategoryMeta(catId) {
+      const map = {
+        education: { label: "Education & Science", tagClass: "tag-education", dotClass: "dot-education" },
+        gcc: { label: "GCC & Regional", tagClass: "tag-gcc", dotClass: "dot-gcc" },
+        environment: { label: "Environment & Climate", tagClass: "tag-environment", dotClass: "dot-environment" },
+        human: { label: "Human Rights & Health", tagClass: "tag-human", dotClass: "dot-human" },
+        personal: { label: "Personal Milestone", tagClass: "tag-personal", dotClass: "dot-personal" }
+      };
+      return map[catId] || { label: "Observance", tagClass: "tag-education", dotClass: "dot-education" };
+    }
+
+    function parseLocalDate(dateStr) {
+      const [y, m, d] = dateStr.split("-").map(Number);
+      return new Date(y, m - 1, d);
+    }
+
+    function getFilteredEvents() {
+      const query = document.getElementById("searchInput").value.trim().toLowerCase();
+      return OBSERVANCES_2027.filter(ev => {
+        const matchesCat = activeCategory === "all" || ev.category === activeCategory;
+        if (!matchesCat) return false;
+        if (!query) return true;
+        const dObj = parseLocalDate(ev.date);
+        const monthName = MONTH_NAMES[dObj.getMonth()].toLowerCase();
+        return (
+          ev.title.toLowerCase().includes(query) ||
+          ev.desc.toLowerCase().includes(query) ||
+          monthName.includes(query) ||
+          ev.date.includes(query)
+        );
+      });
+    }
+
+    function renderCategoryTabs() {
+      const container = document.getElementById("categoryTabs");
+      container.innerHTML = CATEGORIES.map(cat => {
+        const count = cat.id === "all"
+          ? OBSERVANCES_2027.length
+          : OBSERVANCES_2027.filter(e => e.category === cat.id).length;
+        const isActive = activeCategory === cat.id ? "active" : "";
+        return `
+          <button class="cat-pill ${isActive}" onclick="setCategory('${cat.id}')">
+            <span>${cat.icon}</span>
+            <span>${cat.label}</span>
+            <span class="count">${count}</span>
+          </button>
+        `;
+      }).join("");
+    }
+
+    function setCategory(catId) {
+      activeCategory = catId;
+      renderCategoryTabs();
+      renderApp();
+    }
+
+    function switchView(view) {
+      activeView = view;
+      document.getElementById("btnViewDir").classList.toggle("active", view === "directory");
+      document.getElementById("btnViewCal").classList.toggle("active", view === "calendar");
+      document.getElementById("directorySection").classList.toggle("hidden", view !== "directory");
+      document.getElementById("calendarSection").classList.toggle("hidden", view !== "calendar");
+      renderApp();
+    }
+
+    function renderDirectory(filtered) {
+      const grid = document.getElementById("eventsGrid");
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div style="grid-column:1/-1; background:#fff; border:1.5px solid var(--border); border-radius:14px; padding:32px; text-align:center; color:var(--text-muted);">
+            No 2027 observances matched your search filter. Try clearing the search box or switching categories.
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = filtered.map((ev, idx) => {
+        const d = parseLocalDate(ev.date);
+        const meta = getCategoryMeta(ev.category);
+        const isPersonal = ev.category === "personal";
+        const globalIndex = OBSERVANCES_2027.indexOf(ev);
+        return `
+          <article class="event-card ${isPersonal ? 'personal-highlight' : ''}">
+            <div>
+              <div class="card-top">
+                <span class="cat-tag ${meta.tagClass}">${meta.label}</span>
+                <div class="date-badge ${isPersonal ? 'personal' : ''}">
+                  <span class="month">${MONTH_SHORT[d.getMonth()]}</span>
+                  <span class="day">${d.getDate()}</span>
+                </div>
+              </div>
+              <h3 class="event-title">${ev.title}</h3>
+              <p class="event-desc">${ev.desc}</p>
+            </div>
+            <div class="card-footer">
+              <span class="weekday-label">${WEEKDAYS[d.getDay()]}, ${MONTH_NAMES[d.getMonth()]} ${d.getDate()}, 2027</span>
+              <button class="btn-ics-sm" onclick="downloadSingleICS(${globalIndex})">
+                🔔 + Phone Reminder
+              </button>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    function renderFullYearCalendar(filtered) {
+      const yearGrid = document.getElementById("yearGrid");
+      const eventsByDate = {};
+      filtered.forEach(ev => {
+        if (!eventsByDate[ev.date]) eventsByDate[ev.date] = [];
+        eventsByDate[ev.date].push(ev);
+      });
+
+      let html = "";
+      for (let m = 0; m < 12; m++) {
+        const firstDay = new Date(2027, m, 1).getDay();
+        const daysInMonth = new Date(2027, m + 1, 0).getDate();
+        let monthEventCount = 0;
+
+        let cellsHtml = "";
+        for (let empty = 0; empty < firstDay; empty++) {
+          cellsHtml += `<div class="day-cell empty"></div>`;
+        }
+
+        for (let day = 1; day <= daysInMonth; day++) {
+          const mm = String(m + 1).padStart(2, "0");
+          const dd = String(day).padStart(2, "0");
+          const dateKey = `2027-${mm}-${dd}`;
+          const dayEvents = eventsByDate[dateKey] || [];
+          monthEventCount += dayEvents.length;
+
+          const isBirthday = dateKey === "2027-10-05" && dayEvents.some(e => e.category === "personal");
+          const hasEventClass = dayEvents.length > 0 ? "has-event" : "";
+          const bdayClass = isBirthday ? "birthday-cell" : "";
+          const clickAttr = dayEvents.length > 0 ? `onclick="openDateModal('${dateKey}')"` : "";
+          const titleAttr = dayEvents.length > 0 ? `title="${dayEvents.map(e => e.title).join(' | ')}"` : "";
+
+          let dotsHtml = "";
+          if (dayEvents.length > 0) {
+            dotsHtml = `<div class="dots-row">` +
+              dayEvents.slice(0, 3).map(e => `<span class="dot ${getCategoryMeta(e.category).dotClass}"></span>`).join("") +
+              `</div>`;
+          }
+
+          cellsHtml += `
+            <div class="day-cell ${hasEventClass} ${bdayClass}" ${clickAttr} ${titleAttr}>
+              <span>${isBirthday ? '★' + day : day}</span>
+              ${dotsHtml}
+            </div>
+          `;
+        }
+
+        html += `
+          <div class="month-card">
+            <div class="month-header">
+              <h3>${MONTH_NAMES[m]} 2027</h3>
+              <span class="month-count">${monthEventCount} ${monthEventCount === 1 ? 'event' : 'events'}</span>
+            </div>
+            <div class="weekdays-row">
+              <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+            </div>
+            <div class="days-grid">${cellsHtml}</div>
+          </div>
+        `;
+      }
+      yearGrid.innerHTML = html;
+    }
+
+    function openDateModal(dateKey) {
+      const d = parseLocalDate(dateKey);
+      const dayEvents = OBSERVANCES_2027.filter(e => e.date === dateKey);
+      document.getElementById("modalDateTitle").textContent =
+        `${WEEKDAYS[d.getDay()]}, ${MONTH_NAMES[d.getMonth()]} ${d.getDate()}, 2027`;
+
+      const body = document.getElementById("modalBody");
+      body.innerHTML = dayEvents.map(ev => {
+        const meta = getCategoryMeta(ev.category);
+        const globalIndex = OBSERVANCES_2027.indexOf(ev);
+        const isPersonal = ev.category === "personal";
+        return `
+          <div class="modal-event-item ${isPersonal ? 'personal' : ''}">
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:6px;">
+              <span class="cat-tag ${meta.tagClass}">${meta.label}</span>
+              <button class="btn-ics-sm" onclick="downloadSingleICS(${globalIndex})">🔔 Add to Phone Calendar (.ics)</button>
+            </div>
+            <h4 style="font-size:1rem; font-weight:700; margin-bottom:4px;">${ev.title}</h4>
+            <p style="font-size:0.86rem; color:var(--text-muted);">${ev.desc}</p>
+          </div>
+        `;
+      }).join("");
+
+      document.getElementById("dateModal").classList.add("open");
+    }
+
+    function closeModal() {
+      document.getElementById("dateModal").classList.remove("open");
+    }
+
+    function closeModalOnBackdrop(e) {
+      if (e.target.id === "dateModal") closeModal();
+    }
+
+    function renderApp() {
+      const filtered = getFilteredEvents();
+      const catObj = CATEGORIES.find(c => c.id === activeCategory);
+      document.getElementById("bannerTitle").textContent = `${catObj.icon} ${catObj.label}`;
+      document.getElementById("visibleCountBadge").textContent = `${filtered.length} ${filtered.length === 1 ? 'Observance' : 'Observances'}`;
+
+      if (activeView === "directory") {
+        renderDirectory(filtered);
+      } else {
+        renderFullYearCalendar(filtered);
+      }
+    }
+
+    function escapeICS(str) {
+      return str.replace(/\\/g, "\\\\").replace(/;/g, "\\;").replace(/,/g, "\\,").replace(/\n/g, "\\n");
+    }
+
+    function buildICSContent(eventsList) {
+      const alarmMinutes = parseInt(document.getElementById("alarmSelect").value, 10);
+      const triggerVal = alarmMinutes === 0 ? "PT9H" : `-PT${alarmMinutes - 540}M`;
+      const nowStamp = new Date().toISOString().replace(/[-:]/g, "").split(".")[0] + "Z";
+
+      let lines = [
+        "BEGIN:VCALENDAR",
+        "VERSION:2.0",
+        "PRODID:-//Dalal Alotaibi//2027 UN Observances & GCC Calendar//EN",
+        "CALSCALE:GREGORIAN",
+        "METHOD:PUBLISH"
+      ];
+
+      eventsList.forEach((ev, idx) => {
+        const startCompact = ev.date.replace(/-/g, "");
+        const d = parseLocalDate(ev.date);
+        d.setDate(d.getDate() + 1);
+        const endCompact = `${d.getFullYear()}${String(d.getMonth() + 1).padStart(2, "0")}${String(d.getDate()).padStart(2, "0")}`;
+
+        lines.push(
+          "BEGIN:VEVENT",
+          `UID:dalal-2027-${startCompact}-${idx}@observances2027`,
+          `DTSTAMP:${nowStamp}`,
+          `DTSTART;VALUE=DATE:${startCompact}`,
+          `DTEND;VALUE=DATE:${endCompact}`,
+          `SUMMARY:${escapeICS(ev.title)}`,
+          `DESCRIPTION:${escapeICS(ev.desc)}`,
+          "BEGIN:VALARM",
+          "ACTION:DISPLAY",
+          `DESCRIPTION:Reminder: ${escapeICS(ev.title)}`,
+          `TRIGGER:${triggerVal}`,
+          "END:VALARM",
+          "END:VEVENT"
+        );
+      });
+
+      lines.push("END:VCALENDAR");
+      return lines.join("\r\n");
+    }
+
+    function triggerDownload(filename, content) {
+      const blob = new Blob([content], { type: "text/calendar;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    function downloadSingleICS(globalIndex) {
+      const ev = OBSERVANCES_2027[globalIndex];
+      const safeName = ev.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+      triggerDownload(`${ev.date}-${safeName}.ics`, buildICSContent([ev]));
+    }
+
+    function downloadCategoryICS() {
+      const filtered = getFilteredEvents();
+      if (filtered.length === 0) return;
+      triggerDownload(`2027-${activeCategory}-observances.ics`, buildICSContent(filtered));
+    }
+
+    function downloadAllICS() {
+      triggerDownload("2027-UN-Observances-GCC-Dalal-Calendar.ics", buildICSContent(OBSERVANCES_2027));
+    }
+
+    renderCategoryTabs();
+    renderApp();
+  </script>
+</body>
+</html>
